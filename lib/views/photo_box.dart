@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 Widget photoBox(
     {required String userImage,
     required String userName,
-    required String photo}) {
+    required String photo,required int likes,required int comments}) {
   return Card(
     child: Container(
       height: 300,
@@ -23,6 +23,7 @@ Widget photoBox(
               userName,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            trailing: Icon(Icons.more_vert),
           ),
           Expanded(
               child: Container(
@@ -42,18 +43,19 @@ Widget photoBox(
           ),
           Row(
             children: [
-              IconButton(
-                icon: const Icon(CupertinoIcons.heart_fill),
-                color: Colors.red,
-                iconSize: 20,
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: const Icon(CupertinoIcons.chat_bubble_fill),
-                color: Colors.blue,
-                iconSize: 20,
-                onPressed: () {},
-              ),
+                     Icon(
+                    Icons.favorite_border_rounded,
+                       size: 20,
+
+),
+              SizedBox(width: 5,),
+              Text(likes.toString()),
+              SizedBox(width: 5,),
+              Icon(Icons.comment,size: 20,),
+              SizedBox(width: 5,),
+              Text(comments.toString()),
+              SizedBox(width: 5,),
+              Icon(Icons.share,size: 20,),
         ],
   ),
         ],

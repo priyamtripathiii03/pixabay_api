@@ -10,14 +10,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.black,
         elevation: 10,
         shadowColor: Colors.black,
         title: const Text(
-          'Home Page',
+          'Pixabay',
           style: TextStyle(
               color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Consumer<HomeProvider>(builder: (context, provider, child) {
         if (provider.pixabay != null) {
@@ -26,7 +35,10 @@ class HomePage extends StatelessWidget {
             itemBuilder: (context, index) => photoBox(
               photo: provider.pixabay!.hits[index].largeImageUrl,
                 userImage: provider.pixabay!.hits[index].userImageUrl,
-                userName: provider.pixabay!.hits[index].user),
+                userName: provider.pixabay!.hits[index].user,
+              likes: provider.pixabay!.hits[index].likes,
+              comments: provider.pixabay!.hits[index].comments,
+            ),
           );
         }
         return const Center(
