@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 Widget photoBox(
@@ -9,7 +9,7 @@ Widget photoBox(
     child: Container(
       height: 300,
       width: double.infinity,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -23,7 +23,7 @@ Widget photoBox(
               userName,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            trailing: Icon(Icons.more_vert),
+            trailing: const Icon(Icons.more_vert),
           ),
           Expanded(
               child: Container(
@@ -38,24 +38,24 @@ Widget photoBox(
                 ),
               ),
           ),
-          Divider(
+          const Divider(
             thickness: 1,
           ),
           Row(
             children: [
-                     Icon(
+                     const Icon(
                     Icons.favorite_border_rounded,
                        size: 20,
 
 ),
-              SizedBox(width: 5,),
+              const SizedBox(width: 5,),
               Text(likes.toString()),
-              SizedBox(width: 5,),
-              Icon(Icons.comment,size: 20,),
-              SizedBox(width: 5,),
+              const SizedBox(width: 5,),
+              const Icon(Icons.comment,size: 20,),
+              const SizedBox(width: 5,),
               Text(comments.toString()),
-              SizedBox(width: 5,),
-              Icon(Icons.share,size: 20,),
+              const SizedBox(width: 5,),
+              const Icon(Icons.share,size: 20,),
         ],
   ),
         ],
