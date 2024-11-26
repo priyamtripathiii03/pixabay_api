@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.amber,
         elevation: 10,
@@ -39,6 +40,7 @@ class HomePage extends StatelessWidget {
                 userName: provider.pixabay!.hits[index].user,
                 likes: provider.pixabay!.hits[index].likes,
                 comments: provider.pixabay!.hits[index].comments,
+                tags: provider.pixabay!.hits[index].tags,
               ),
             );
           }
@@ -51,6 +53,7 @@ class HomePage extends StatelessWidget {
                 userName: provider.searchResults!.hits[index].user,
                 likes: provider.searchResults!.hits[index].likes,
                 comments: provider.searchResults!.hits[index].comments,
+                tags: provider.searchResults!.hits[index].tags,
               ),
             );
 
